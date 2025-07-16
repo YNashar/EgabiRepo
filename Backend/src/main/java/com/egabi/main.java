@@ -1,5 +1,4 @@
 package com.egabi;
-
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -15,15 +14,13 @@ class StudentController {
     }
 
     @GetMapping
-    public List<student> getStudents() {
+    public List<StudentDTO> getStudents() {
         return studentService.getStudents();
     }
 
-    record NewStudentRequest(String studentName, Integer facultyId, Integer level, String nationalId) {}
-
     @PostMapping
-    public void addStudent(@RequestBody NewStudentRequest request) {
-        studentService.addStudent(request);
+    public void addStudent(@RequestBody StudentDTO studentDto) {
+        studentService.addStudent(studentDto);
     }
 
     @DeleteMapping("{studentId}")
@@ -34,8 +31,8 @@ class StudentController {
     @PutMapping("{studentId}")
     public void updateStudent(
             @PathVariable("studentId") Integer id,
-            @RequestBody NewStudentRequest request
+            @RequestBody StudentDTO studentDto
     ) {
-        studentService.updateStudent(id, request);
+        studentService.updateStudent(id, studentDto);
     }
 }

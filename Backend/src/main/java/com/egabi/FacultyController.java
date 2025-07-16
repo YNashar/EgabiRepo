@@ -14,23 +14,23 @@ public class FacultyController {
     private FacultyService facultyService;
 
     @GetMapping
-    public List<Faculty> getAllFaculties() {
+    public List<FacultyDTO> getAllFaculties() {
         return facultyService.getAllFaculties();
     }
 
     @GetMapping("/{id}")
-    public Optional<Faculty> getFacultyById(@PathVariable Integer id) {
+    public Optional<FacultyDTO> getFacultyById(@PathVariable Integer id) {
         return facultyService.getFacultyById(id);
     }
 
     @PostMapping
-    public Faculty createFaculty(@RequestBody Faculty faculty) {
-        return facultyService.createFaculty(faculty);
+    public FacultyDTO createFaculty(@RequestBody FacultyDTO facultyDto) {
+        return facultyService.createFaculty(facultyDto);
     }
 
     @PutMapping("/{id}")
-    public Faculty updateFaculty(@PathVariable Integer id, @RequestBody Faculty faculty) {
-        return facultyService.updateFaculty(id, faculty);
+    public FacultyDTO updateFaculty(@PathVariable Integer id, @RequestBody FacultyDTO facultyDto) {
+        return facultyService.updateFaculty(id, facultyDto);
     }
 
     @DeleteMapping("/{id}")

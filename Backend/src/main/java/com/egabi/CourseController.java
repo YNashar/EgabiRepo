@@ -2,7 +2,6 @@ package com.egabi;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -15,23 +14,23 @@ public class CourseController {
     private CourseService courseService;
 
     @GetMapping
-    public List<Course> getAllCourses() {
+    public List<CourseDTO> getAllCourses() {
         return courseService.getAllCourses();
     }
 
     @GetMapping("/{id}")
-    public Optional<Course> getCourseById(@PathVariable Integer id) {
+    public Optional<CourseDTO> getCourseById(@PathVariable Integer id) {
         return courseService.getCourseById(id);
     }
 
     @PostMapping
-    public Course createCourse(@RequestBody Course course) {
-        return courseService.createCourse(course);
+    public CourseDTO createCourse(@RequestBody CourseDTO courseDto) {
+        return courseService.createCourse(courseDto);
     }
 
     @PutMapping("/{id}")
-    public Course updateCourse(@PathVariable Integer id, @RequestBody Course course) {
-        return courseService.updateCourse(id, course);
+    public CourseDTO updateCourse(@PathVariable Integer id, @RequestBody CourseDTO courseDto) {
+        return courseService.updateCourse(id, courseDto);
     }
 
     @DeleteMapping("/{id}")

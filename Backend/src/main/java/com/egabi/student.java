@@ -9,7 +9,6 @@ public class student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer studentId;
-
     private String studentName;
     private Integer facultyId;
     private Integer level;
