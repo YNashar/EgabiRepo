@@ -1,6 +1,6 @@
 package com.egabi.Service;
 
-import com.egabi.Main.User;
+import com.egabi.User;
 import org.springframework.stereotype.Service;
 
 @Service

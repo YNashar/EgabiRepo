@@ -1,6 +1,6 @@
 package com.egabi.Repository;
 
-import com.egabi.Main.CourseFacultyLevel;
+import com.egabi.Controller.CourseFacultyLevel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import java.util.List;

@@ -1,6 +1,6 @@
 package com.egabi.Service;
 
-import com.egabi.Main.CourseFacultyLevel;
+import com.egabi.Controller.CourseFacultyLevel;
 import com.egabi.Repository.CourseFacultyLevelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

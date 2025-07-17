@@ -1,6 +1,6 @@
 package com.egabi.Service;
 
-import com.egabi.Main.Enrollment;
+import com.egabi.Enrollment;
 import com.egabi.Repository.EnrollmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

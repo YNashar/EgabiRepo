@@ -1,6 +1,6 @@
 package com.egabi.Controller;
 
-import com.egabi.Main.Enrollment;
+import com.egabi.Enrollment;
 import com.egabi.Service.EnrollmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

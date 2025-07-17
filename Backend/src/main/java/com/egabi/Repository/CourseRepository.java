@@ -1,6 +1,6 @@
 package com.egabi.Repository;
 
-import com.egabi.Main.Course;
+import com.egabi.Course;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

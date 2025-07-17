@@ -1,9 +1,10 @@
 package com.egabi.Controller;
 
-import com.egabi.Main.Course;
+import com.egabi.Course;
 import com.egabi.DTO.FacultyDTO;
 import com.egabi.Service.FacultyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
@@ -13,36 +14,43 @@ import java.util.Optional;
 @CrossOrigin(origins = "*") // Allow access from Angular
 public class FacultyController {
 
-    @Autowired
-    private FacultyService facultyService;
+  @Autowired
+  private FacultyService facultyService;
 
-    @GetMapping
-    public List<FacultyDTO> getAllFaculties() {
-        return facultyService.getAllFaculties();
-    }
+  @GetMapping
+  public ResponseEntity<List<FacultyDTO>> getAllFaculties() {
+    List<FacultyDTO> faculties = facultyService.getAllFaculties();
+    return ResponseEntity.ok(faculties);
+  }
 
-    @GetMapping("/{id}")
-    public Optional<FacultyDTO> getFacultyById(@PathVariable Integer id) {
-        return facultyService.getFacultyById(id);
-    }
+  @GetMapping("/{id}")
+  public ResponseEntity<FacultyDTO> getFacultyById(@PathVariable Integer id) {
+    return facultyService.getFacultyById(id)
+      .map(ResponseEntity::ok)
+      .orElse(ResponseEntity.notFound().build());
+  }
 
-    @PostMapping
-    public FacultyDTO createFaculty(@RequestBody FacultyDTO facultyDto) {
-        return facultyService.createFaculty(facultyDto);
-    }
+  @PostMapping
+  public ResponseEntity<FacultyDTO> createFaculty(@RequestBody FacultyDTO facultyDto) {
+    FacultyDTO created = facultyService.createFaculty(facultyDto);
+    return ResponseEntity.ok(created);
+  }
 
-    @PutMapping("/{id}")
-    public FacultyDTO updateFaculty(@PathVariable Integer id, @RequestBody FacultyDTO facultyDto) {
-        return facultyService.updateFaculty(id, facultyDto);
-    }
+  @PutMapping("/{id}")
+  public ResponseEntity<FacultyDTO> updateFaculty(@PathVariable Integer id, @RequestBody FacultyDTO facultyDto) {
+    FacultyDTO updated = facultyService.updateFaculty(id, facultyDto);
+    return ResponseEntity.ok(updated);
+  }
 
-    @DeleteMapping("/{id}")
-    public void deleteFaculty(@PathVariable Integer id) {
-        facultyService.deleteFaculty(id);
-    }
+  @DeleteMapping("/{id}")
+  public ResponseEntity<Void> deleteFaculty(@PathVariable Integer id) {
+    facultyService.deleteFaculty(id);
+    return ResponseEntity.noContent().build();
+  }
 
-    @GetMapping("/{facultyId}/courses")
-    public List<Course> getCoursesByFaculty(@PathVariable Integer facultyId) {
-        return facultyService.getCoursesByFaculty(facultyId);
-    }
+  @GetMapping("/{facultyId}/courses")
+  public ResponseEntity<List<Course>> getCoursesByFaculty(@PathVariable Integer facultyId) {
+    List<Course> courses = facultyService.getCoursesByFaculty(facultyId);
+    return ResponseEntity.ok(courses);
+  }
 }

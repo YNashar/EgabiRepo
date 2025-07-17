@@ -1,4 +1,4 @@
-package com.egabi.Main;
+package com.egabi.Controller;
 
 import jakarta.persistence.*;
 

@@ -1,7 +1,7 @@
 package com.egabi.Controller;
 
 import com.egabi.Service.AuthService;
-import com.egabi.Main.User;
+import com.egabi.User;
 import com.egabi.security.JwtUtil;
 import org.springframework.web.bind.annotation.*;
 

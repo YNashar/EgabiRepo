@@ -1,6 +1,5 @@
 package com.egabi.Controller;
 
-import com.egabi.Main.CourseFacultyLevel;
 import com.egabi.Service.CourseFacultyLevelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

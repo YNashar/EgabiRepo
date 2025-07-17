@@ -1,6 +1,6 @@
 package com.egabi.Service;
 
-import com.egabi.Main.Grade;
+import com.egabi.Grade;
 import com.egabi.Repository.GradeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

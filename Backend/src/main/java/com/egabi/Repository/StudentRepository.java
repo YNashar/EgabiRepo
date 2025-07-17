@@ -1,8 +1,8 @@
 package com.egabi.Repository;
 
-import com.egabi.Main.student;
+import com.egabi.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface StudentRepository extends JpaRepository<student, Integer> {
+public interface StudentRepository extends JpaRepository<Student, Integer> {
 
 }
