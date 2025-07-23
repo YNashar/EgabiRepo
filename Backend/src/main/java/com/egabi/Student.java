@@ -19,4 +19,4 @@ public class Student {
   private Integer facultyId;
   private Integer level;
   private String nationalId;
-}
+} 
